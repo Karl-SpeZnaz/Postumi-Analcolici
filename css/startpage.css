@@ -4,7 +4,7 @@
 body {
   background-color: var(--color-primary);
   font-family: var(--font-family);
-  overflow-x: hidden; /* Previene lo scorrimento orizzontale su mobile */
+  overflow-x: hidden;
 }
 
 /*==========================================================================
@@ -21,9 +21,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding: 2rem;
-  gap: 2rem;
+  min-height: 120vh;
+  gap: 4rem;
+  padding: 0 4rem;
 }
 
 .card-two {
@@ -32,22 +32,13 @@ body {
 
 .card-txt-one h1, 
 .card-txt-two h1 {
-  /* clamp(minimo, valore ideale, massimo) adatta il font allo schermo */
-  font-size: clamp(3rem, 5vw, 5.5rem); 
+  font-size: 5.5rem;
   color: var(--color-text-on-dark);
-  line-height: 1.1;
 }
-
 .card-txt-one h3, 
 .card-txt-two h3 {
-  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-size: 2rem;
   color: var(--color-text-muted-on-dark);
-}
-
-.card-photo-one img, 
-.card-photo-two img {
-  max-width: 100%;
-  height: auto;
 }
 
 /*==========================================================================
@@ -56,61 +47,59 @@ body {
 .bio {
   display: flex;
   position: relative;
-  min-height: 80vh;
+  height: 80vh;
   background-color: var(--color-accent-warm);
   align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  overflow: hidden;
 }
 
 .info-bio {
-  position: relative;
+  position: absolute;
+  top: 10%;
+  left: 5%;
   z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
   max-width: 800px;
-  width: 100%;
 }
 
 .info-bio h1 {
-  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-top: 10vh;
+  text-align: center;
+  font-size: 2.5rem;
   font-weight: bolder;
+  margin-left: 50vh;
   color: var(--color-accent-dark);
-  margin-bottom: 0.5rem;
 }
 
 .info-bio h3 {
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  text-align: center;
+  font-size: 1.5rem;
   font-weight: bold;
+  margin-left: 50vh;
   color: var(--color-text-muted);
-  margin-bottom: 1.5rem;
 }
 
 .info-bio p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  width: 100%;
+  text-align: center;
+  font-size: large;
+  line-height: 2;
+  margin-top: 20px;
+  margin-left: 50vh;
+  width: 800px;
 }
 
 .tenda-dx {
   position: absolute;
-  top: 0;
-  left: -5%;
-  max-width: 300px;
-  opacity: 0.3;
-  z-index: 1;
+  top: 5%;
+  left: 2%;
+  font-size: 12rem;
+  z-index: 5;
 }
 
 .tenda-sx {
   position: absolute;
-  bottom: 0;
-  right: -5%;
-  max-width: 300px;
-  opacity: 0.3;
-  z-index: 1;
+  top: 0;
+  right: 0;
+  transform: translateX(50%);
+  z-index: 5;
 }
 
 /*==========================================================================
@@ -118,41 +107,39 @@ body {
    ========================================================================== */
 .sinossi {
   position: relative;
+  margin-top: 10vh;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  overflow: hidden;
 }
 
 .sino {
-  max-width: 900px;
-  width: 100%;
   position: relative;
-  z-index: 2;
+  width: 100%;
+}
+
+.sinossi h2,
+.sinossi p {
+  margin-left: 100px;
+  color: var(--color-bg-light);
 }
 
 .sinossi h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--color-bg-light);
-  margin-bottom: 1.5rem;
+  font-size: 3rem;
 }
 
 .sinossi p {
-  font-size: 1.1rem;
-  color: var(--color-bg-light);
-  line-height: 1.7;
+  font-size: 1.3rem;
+  width: 900px;
   text-align: justify;
+  line-height: 1.7;
 }
 
 .log-tele {
   position: absolute;
-  top: 10%;
-  right: -5%;
-  max-width: 250px;
-  opacity: 0.3;
-  z-index: 1;
+  top: 0;
+  right: 10%;
+  transform: translateY(10%);
 }
 
 /*==========================================================================
@@ -161,66 +148,109 @@ body {
 .motivazioni {
   display: flex;
   position: relative;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10vh;
   min-height: 100vh;
   background-color: var(--color-deep-bg);
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  overflow: hidden;
 }
 
 .motivo {
-  max-width: 900px;
-  width: 100%;
   position: relative;
-  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.motivo h2,
+.motivo p {
+  color: var(--color-bg-light);
+  margin-right: 100px;
 }
 
 .motivo h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--color-bg-light);
-  text-align: right;
-  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  text-align: end;
+  margin-top: 10vh;
 }
 
 .motivo p {
-  font-size: 1.1rem;
-  color: var(--color-bg-light);
-  line-height: 1.7;
+  font-size: 1.3rem;
+  width: 900px;
   text-align: justify;
+  line-height: 1.7;
 }
 
 .giradischi-photo {
   position: absolute;
-  top: 10%;
-  left: -5%;
-  max-width: 250px;
-  opacity: 0.3;
-  z-index: 1;
+  top: 30%;
+  left: 10%;
 }
 
-/*==========================================================================
-   MEDIA QUERIES (Regole esclusive per schermi sotto i 992px)
+
+/* ==========================================================================
+   MEDIA QUERIES (Interviene SOLO su dispositivi mobili sotto i 992px)
    ========================================================================== */
 @media (max-width: 992px) {
-  .card-one, 
-  .card-two {
-    flex-direction: column; /* Incolonna testi e immagini */
+  .card-one, .card-two {
+    flex-direction: column;
+    height: auto;
+    min-height: 80vh;
+    padding: 3rem 1rem;
     text-align: center;
-    gap: 1.5rem;
+  }
+  
+  .card-txt-one h1, .card-txt-two h1 {
+    font-size: 3.5rem;
+  }
+
+  .bio {
+    height: auto;
     padding: 4rem 1rem;
   }
 
-  .sinossi h2, 
-  .motivo h2 {
-    text-align: center; /* Centra i titoli laterali */
+  .info-bio {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0 auto;
+    text-align: center;
   }
 
-  /* Nasconde gli elementi grafici decorativi che uscirebbero dallo schermo */
-  .tenda-dx, 
-  .tenda-sx, 
-  .log-tele, 
-  .giradischi-photo {
-    display: none; 
+  .info-bio h1, .info-bio h3, .info-bio p {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .sinossi {
+    height: auto;
+    padding: 4rem 1rem;
+  }
+
+  .sinossi h2, .sinossi p {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .motivazioni {
+    height: auto;
+    padding: 4rem 1rem;
+    justify-content: center;
+  }
+
+  .motivo {
+    align-items: center;
+  }
+
+  .motivo h2, .motivo p {
+    margin-right: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Nasconde le immagini posizionate in assoluto solo su mobile per evitare sovrapposizioni estreme */
+  .tenda-dx, .tenda-sx, .log-tele, .giradischi-photo {
+    display: none;
   }
 }
