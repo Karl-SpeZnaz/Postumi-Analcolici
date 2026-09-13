@@ -1,6 +1,7 @@
 /*==========================================================================
-   RESET E IMPOSTAZIONI BASE
+   START WORK (Startpage Styles)
    ========================================================================== */
+
 body {
   background-color: var(--color-primary);
   font-family: var(--font-family);
@@ -16,31 +17,34 @@ body {
   width: 100%;
 }
 
-.card-one, 
+.card-one {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 120vh;
+}
 .card-two {
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   justify-content: center;
   height: 120vh;
 }
 
-.card-two {
-  flex-direction: row-reverse;
-}
-
-.card-txt-one h1, 
+.card-txt-one h1,
 .card-txt-two h1 {
   font-size: 5.5rem;
   color: var(--color-text-on-dark);
 }
-.card-txt-one h3, 
+.card-txt-one h3,
 .card-txt-two h3 {
   font-size: 2rem;
   color: var(--color-text-muted-on-dark);
 }
 
 /*==========================================================================
-   INFO BIO 
+   INFO BIO CV 
    ========================================================================== */
 .bio {
   display: flex;
@@ -84,18 +88,16 @@ body {
   top: 5%;
   left: 2%;
   font-size: 12rem;
-  z-index: 10;
 }
 .tenda-sx {
   position: absolute;
   top: 0;
   right: 0;
   translate: 50%;
-  z-index: 10;
 }
 
 /*==========================================================================
-   SINOSSI
+   SINOSSI (Con televisore corretto per evitare sovrapposizioni)
    ========================================================================== */
 .sinossi {
   position: relative;
@@ -116,11 +118,13 @@ body {
   text-align: justify;
   line-height: 1.7;
 }
+
+/* Televisore corretto: ancoraggio sicuro a destra senza coprire il testo */
 .log-tele {
   position: absolute;
-  top: 0;
-  right: 15%; /* Ancorato a destra in modo percentuale per non finire sopra il testo */
-  transform: translateY(10%);
+  top: 15%;
+  right: 5%;
+  max-width: 220px;
   z-index: 10;
 }
 
@@ -154,51 +158,93 @@ body {
 .giradischi-photo {
   position: absolute;
   top: 30%;
-  left: 5%; /* Posizionato a sinistra in modo sicuro rispetto al blocco testuale */
+  left: 5%;
+  max-width: 250px;
   z-index: 10;
 }
 
 /*==========================================================================
-   MEDIA QUERIES (Gestione sicura per schermi piccoli e smartphone)
+   MEDIA QUERIES (Adattamento responsive per smartphone e tablet)
    ========================================================================== */
 @media (max-width: 1024px) {
-  .card-one, .card-two {
+  .card-one, 
+  .card-two {
     flex-direction: column;
     height: auto;
     min-height: 100vh;
-    padding: 2rem;
+    padding: 3rem 1rem;
     text-align: center;
   }
   
+  .card-txt-one h1, 
+  .card-txt-two h1 {
+    font-size: 3.5rem;
+  }
+
+  .bio {
+    height: auto;
+    padding: 4rem 1rem;
+  }
+
   .info-bio {
     position: relative;
     top: auto;
     left: auto;
     translate: 0;
-    padding: 2rem;
+    margin: 0 auto;
   }
-  
-  .info-bio h1, .info-bio h3, .info-bio p {
+
+  .info-bio h1, 
+  .info-bio h3, 
+  .info-bio p {
     margin-left: 0;
     width: 100%;
   }
 
-  .sinossi h2, .sinossi p,
-  .motivo h2, .motivo p {
+  .sinossi {
+    height: auto;
+    padding: 4rem 1rem;
+  }
+
+  .sinossi h2, 
+  .sinossi p {
     margin-left: 20px;
     margin-right: 20px;
     width: auto;
+    text-align: left;
   }
 
-  /* Su mobile le immagini decorative vengono disposte senza sovrapporsi al testo */
-  .tenda-dx, .tenda-sx, .log-tele, .giradischi-photo {
+  .motivazioni {
+    height: auto;
+    padding: 4rem 1rem;
+    justify-content: center;
+  }
+
+  .motivo {
+    width: 100%;
+  }
+
+  .motivo h2, 
+  .motivo p {
+    margin-right: 20px;
+    margin-left: 20px;
+    width: auto;
+    text-align: left;
+  }
+
+  /* Gestione degli elementi decorativi su mobile per evitare overflow o coperture */
+  .tenda-dx, 
+  .tenda-sx, 
+  .log-tele, 
+  .giradischi-photo {
     position: relative;
     top: auto;
-    left: auto;
     right: auto;
+    left: auto;
     translate: 0;
-    margin: 1rem auto;
+    margin: 1.5rem auto;
     display: flex;
     justify-content: center;
+    max-width: 150px;
   }
 }
