@@ -97,7 +97,7 @@ body {
 }
 
 /*==========================================================================
-   SINOSSI (Televisore corretto nei limiti per non coprire il testo su desktop)
+   SINOSSI (Con televisore corretto per non sovrapporsi su desktop)
    ========================================================================== */
 .sinossi {
   position: relative;
@@ -163,7 +163,7 @@ body {
 }
 
 /*==========================================================================
-   MEDIA QUERIES (Smartphone e Tablet: layout fluido e immagini sacrificate)
+   MEDIA QUERIES (Smartphone e Tablet: eliminazione forzata degli elementi)
    ========================================================================== */
 @media (max-width: 1024px) {
   .card-one, 
@@ -231,11 +231,11 @@ body {
     text-align: left;
   }
 
-  /* Sacrifichiamo le immagini decorative su mobile per mantenere la pulizia visiva */
+  /* Rimozione forzata e totale degli elementi decorativi su telefono */
   .tenda-dx, 
   .tenda-sx, 
   .log-tele, 
   .giradischi-photo {
-    display: none;
+    display: none !important;
   }
 }
