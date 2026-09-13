@@ -1,0 +1,303 @@
+:root {
+  /* — Palette principale (esadecimale) */
+  --color-bg-light: #fee0d8; /* sfondo chiaro */
+  --color-primary: #d3161c; /* primario */
+  --color-text: #090909; /* testo principale */
+  --color-text-muted: #7e7063; /* testo secondario */
+  --color-accent-dark: #500607; /* accento scuro */
+  --color-deep-bg: #230505; /* sfondo molto scuro */
+  --color-accent-warm: #dcce75; /* accento caldo */
+  --color-accent-red: #9d1315; /* accento rosso */
+  --color-surface: #40332d; /* superficie/card */
+  --color-accent-olive: #a2954f; /* accento olivastro */
+
+  /* — Ombre (RGB con alpha) */
+  --shadow-color-soft: rgb(254 224 216 / 0.25);
+  --shadow-color-primary: rgb(211 22 28 / 0.35);
+  --shadow-color-text: rgb(9 9 9 / 0.5);
+  --shadow-color-muted: rgb(126 112 99 / 0.35);
+  --shadow-color-accent: rgb(80 6 7 / 0.45);
+  --shadow-color-deep: rgb(35 5 5 / 0.6);
+  --shadow-color-warm: rgb(220 206 117 / 0.3);
+  --shadow-color-red: rgb(157 19 21 / 0.4);
+  --shadow-color-surface: rgb(64 51 45 / 0.4);
+  --shadow-color-olive: rgb(162 149 79 / 0.35);
+
+  /* — Ombre pronte */
+  --shadow-sm: 0 1px 2px var(--shadow-color-text);
+  --shadow-md: 0 4px 12px var(--shadow-color-surface);
+  --shadow-lg: 0 10px 30px var(--shadow-color-deep);
+  --shadow-glow: 0 0 24px var(--shadow-color-primary);
+
+  /* — Sfondi e superfici */
+  --color-bg: var(--color-bg-light);
+  --color-bg-inverse: var(--color-deep-bg);
+  --color-surface-bg: var(--color-surface);
+  --color-surface-bg-alt: var(--color-accent-dark);
+
+  /* — Testi */
+  --color-text-on-light: var(--color-text);
+  --color-text-on-dark: var(--color-bg-light);
+  --color-text-muted-on-light: var(--color-text-muted);
+  --color-text-muted-on-dark: rgb(254 224 216 / 0.85);
+
+  /* — Link e stati */
+  --color-link: var(--color-primary);
+  --color-link-hover: var(--color-accent-red);
+  --color-link-visited: var(--color-accent-dark);
+  --color-focus-ring: var(--color-accent-warm);
+
+  /* — Bottoni */
+  --btn-primary-bg: var(--color-primary);
+  --btn-primary-bg-hover: var(--color-accent-red);
+  --btn-primary-text: #ffffff;
+  --btn-secondary-bg: var(--color-surface);
+  --btn-secondary-bg-hover: var(--color-accent-dark);
+  --btn-secondary-text: var(--color-bg-light);
+  --btn-ghost-bg: transparent;
+  --btn-ghost-text: var(--color-primary);
+  --btn-ghost-text-hover: var(--color-accent-red);
+
+  /* — Bordi */
+  --border-color-light: rgb(126 112 99 / 0.35);
+  --border-color: var(--color-surface);
+  --border-color-strong: var(--color-accent-dark);
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 20px;
+  --border-width: 1px;
+
+  /* — Gradienti coerenti con la locandina */
+  --gradient-hero: linear-gradient(
+    135deg,
+    var(--color-deep-bg) 0%,
+    var(--color-accent-dark) 60%,
+    var(--color-primary) 100%
+  );
+  --gradient-surface: linear-gradient(
+    180deg,
+    var(--color-surface) 0%,
+    var(--color-accent-dark) 100%
+  );
+  --gradient-accent: linear-gradient(
+    90deg,
+    var(--color-accent-warm),
+    var(--color-accent-olive)
+  );
+  --gradient-text-highlight: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-accent-red)
+  );
+
+  /* — Overlay per immagini/hero */
+  --overlay-dark: linear-gradient(
+    180deg,
+    rgb(9 9 9 / 0.65),
+    rgb(35 5 5 / 0.85)
+  );
+  --overlay-warm: linear-gradient(
+    180deg,
+    rgb(220 206 117 / 0.15),
+    rgb(64 51 45 / 0.6)
+  );
+
+  /* — Spaziature e layout (utili per un sito spettacolo) */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  --container-max: 1120px;
+  --header-height: 64px;
+
+  /* — Tipografia di base */
+  --font-family:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  --letter-spacing-wide: 0.04em;
+
+  /* — Transizioni */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* — Utilità colore per sezioni */
+  --section-bg-light: var(--color-bg-light);
+  --section-bg-surface: var(--color-surface);
+  --section-bg-deep: var(--color-deep-bg);
+  --section-text-on-deep: var(--color-text-on-dark);
+}
+
+/*-------------------START WORK---------------------/*
+/*===================================================/*/
+
+body {
+  background-color: var(--color-primary);
+  font-family: var(--font-family);
+}
+
+/*==========================================================================
+   INFO GENERALI GENERE E DURATA ENTRAMBI CON ANIMAZIONI A COMPARSA –
+   ========================================================================== */
+
+.card-one {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  height: 120vh;
+}
+.card-two {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+
+  height: 120vh;
+}
+
+.card-txt-one h1,
+.card-txt-two h1 {
+  font-size: 5.5rem;
+  color: var(--color-text-on-dark);
+}
+.card-txt-one h3,
+.card-txt-two h3 {
+  font-size: 2rem;
+  color: var(--color-text-muted-on-dark);
+}
+
+/*==========================================================================
+   INFO BIO CV BANDA BIANCA CONTIENE + ANIMAZIONI –
+   ========================================================================== */
+
+.bio {
+  display: flex;
+  position: relative;
+  height: 80vh;
+  background-color: var(--color-accent-warm);
+}
+.info-bio {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  translate: -5% -5%;
+  z-index: 1000;
+}
+.info-bio h1 {
+  margin-top: 10vh;
+  text-align: center;
+
+  font-size: 2.5rem;
+  font-weight: bolder;
+
+  margin-left: 50vh;
+
+  color: var(--color-accent-dark);
+}
+.info-bio h3 {
+  text-align: center;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  margin-left: 50vh;
+
+  color: var(--color-text-muted);
+}
+.info-bio p {
+  justify-content: center;
+  text-align: center;
+  font-size: large;
+  line-height: 2;
+  margin-top: 20px;
+  margin-left: 50vh;
+  width: 800px;
+}
+.tenda-dx {
+  position: absolute;
+  top: 5%;
+  left: 2%;
+  font-size: 12rem;
+}
+.tenda-sx {
+  position: absolute;
+  top: 0;
+  right: 0;
+  translate: 50%;
+}
+/*==========================================================================
+   SINOSSI
+   ========================================================================== */
+.sinossi {
+  position: relative;
+  margin-top: 10vh;
+  height: 100vh;
+}
+.sinossi h2,
+.sinossi p {
+  margin-left: 100px;
+  color: var(--color-bg-light);
+}
+.sinossi h2 {
+  font-size: 3rem;
+}
+.sinossi p {
+  font-size: 1.3rem;
+  width: 900px;
+  text-align: justify;
+  line-height: 1.7;
+}
+.log-tele {
+  position: absolute;
+  top: 0;
+  translate: 200% 10%;
+}
+/*==========================================================================
+   MOTIVAZIONI/ NOTE DI REGIA
+   ========================================================================== */
+.motivazioni {
+  display: flex;
+  position: relative;
+  justify-content: end;
+  margin-top: 10vh;
+  height: 100vh;
+  background-color: var(--color-deep-bg);
+}
+.motivo h2,
+.motivo p {
+  color: var(--color-bg-light);
+  margin-right: 100px;
+}
+.motivo h2 {
+  font-size: 3rem;
+  text-align: end;
+  margin-top: 10vh;
+}
+.motivo p {
+  font-size: 1.3rem;
+  width: 900px;
+  text-align: justify;
+  line-height: 1.7;
+}
+.giradischi-photo {
+  position: absolute;
+  top: 30%;
+  translate: -150%;
+}

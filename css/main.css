@@ -1,0 +1,170 @@
+:root {
+  /* — Palette principale (esadecimale) */
+  --color-bg-light:      #FEE0D8;  /* sfondo chiaro */
+  --color-primary:       #D3161C;  /* primario */
+  --color-text:          #090909;  /* testo principale */
+  --color-text-muted:    #7E7063;  /* testo secondario */
+  --color-accent-dark:   #500607;  /* accento scuro */
+  --color-deep-bg:       #230505;  /* sfondo molto scuro */
+  --color-accent-warm:   #DCCE75;  /* accento caldo */
+  --color-accent-red:    #9D1315;  /* accento rosso */
+  --color-surface:       #40332D;  /* superficie/card */
+  --color-accent-olive:  #A2954F;  /* accento olivastro */
+
+  /* — Ombre (RGB con alpha) */
+  --shadow-color-soft:   rgb(254 224 216 / 0.25);
+  --shadow-color-primary:rgb(211 22 28 / 0.35);
+  --shadow-color-text:   rgb(9 9 9 / 0.5);
+  --shadow-color-muted:  rgb(126 112 99 / 0.35);
+  --shadow-color-accent: rgb(80 6 7 / 0.45);
+  --shadow-color-deep:   rgb(35 5 5 / 0.6);
+  --shadow-color-warm:   rgb(220 206 117 / 0.3);
+  --shadow-color-red:    rgb(157 19 21 / 0.4);
+  --shadow-color-surface:rgb(64 51 45 / 0.4);
+  --shadow-color-olive:  rgb(162 149 79 / 0.35);
+
+  /* — Ombre pronte */
+  --shadow-sm: 0 1px 2px var(--shadow-color-text);
+  --shadow-md: 0 4px 12px var(--shadow-color-surface);
+  --shadow-lg: 0 10px 30px var(--shadow-color-deep);
+  --shadow-glow: 0 0 24px var(--shadow-color-primary);
+
+  /* — Sfondi e superfici */
+  --color-bg: var(--color-bg-light);
+  --color-bg-inverse: var(--color-deep-bg);
+  --color-surface-bg: var(--color-surface);
+  --color-surface-bg-alt: var(--color-accent-dark);
+
+  /* — Testi */
+  --color-text-on-light: var(--color-text);
+  --color-text-on-dark: var(--color-bg-light);
+  --color-text-muted-on-light: var(--color-text-muted);
+  --color-text-muted-on-dark: rgb(254 224 216 / 0.85);
+
+  /* — Link e stati */
+  --color-link: var(--color-primary);
+  --color-link-hover: var(--color-accent-red);
+  --color-link-visited: var(--color-accent-dark);
+  --color-focus-ring: var(--color-accent-warm);
+
+  /* — Bottoni */
+  --btn-primary-bg: var(--color-primary);
+  --btn-primary-bg-hover: var(--color-accent-red);
+  --btn-primary-text: #ffffff;
+  --btn-secondary-bg: var(--color-surface);
+  --btn-secondary-bg-hover: var(--color-accent-dark);
+  --btn-secondary-text: var(--color-bg-light);
+  --btn-ghost-bg: transparent;
+  --btn-ghost-text: var(--color-primary);
+  --btn-ghost-text-hover: var(--color-accent-red);
+
+  /* — Bordi */
+  --border-color-light: rgb(126 112 99 / 0.35);
+  --border-color: var(--color-surface);
+  --border-color-strong: var(--color-accent-dark);
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 20px;
+  --border-width: 1px;
+
+  /* — Gradienti coerenti con la locandina */
+  --gradient-hero: linear-gradient(135deg, var(--color-deep-bg) 0%, var(--color-accent-dark) 60%, var(--color-primary) 100%);
+  --gradient-surface: linear-gradient(180deg, var(--color-surface) 0%, var(--color-accent-dark) 100%);
+  --gradient-accent: linear-gradient(90deg, var(--color-accent-warm), var(--color-accent-olive));
+  --gradient-text-highlight: linear-gradient(90deg, var(--color-primary), var(--color-accent-red));
+
+  /* — Overlay per immagini/hero */
+  --overlay-dark: linear-gradient(180deg, rgb(9 9 9 / 0.65), rgb(35 5 5 / 0.85));
+  --overlay-warm: linear-gradient(180deg, rgb(220 206 117 / 0.15), rgb(64 51 45 / 0.6));
+
+  /* — Spaziature e layout (utili per un sito spettacolo) */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  --container-max: 1120px;
+  --header-height: 64px;
+
+  /* — Tipografia di base */
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  --letter-spacing-wide: 0.04em;
+
+  /* — Transizioni */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* — Utilità colore per sezioni */
+  --section-bg-light: var(--color-bg-light);
+  --section-bg-surface: var(--color-surface);
+  --section-bg-deep: var(--color-deep-bg);
+  --section-text-on-deep: var(--color-text-on-dark);
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-on-light);
+  background-color: var(--color-bg);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: var(--line-height-tight);
+  font-weight: 700;
+  color: var(--color-text-on-light);
+}
