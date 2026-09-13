@@ -31,16 +31,34 @@ body {
   justify-content: center;
   height: 120vh;
 }
-
 .card-txt-one h1,
 .card-txt-two h1 {
   font-size: 5.5rem;
   color: var(--color-text-on-dark);
 }
+.card-txt-one h1,
+.card-txt-two h1 {
+  font-size: 5.5rem;
+  color: var(--color-text-on-dark);
+
+  animation: cardOneTwoTitolo ease;
+  animation-timeline: view();
+  animation-range: entry 10% cover 50%;
+}
 .card-txt-one h3,
 .card-txt-two h3 {
   font-size: 2rem;
   color: var(--color-text-muted-on-dark);
+
+  animation: cardOneTwoh3 ease;
+  animation-timeline: view();
+  animation-range: entry 10% cover 50%;
+}
+.card-photo-one,
+.card-photo-two {
+  animation: cardOneTwoImg ease;
+  animation-timeline: view();
+  animation-range: entry 10% cover 50%;
 }
 
 /*==========================================================================
@@ -88,12 +106,20 @@ body {
   top: 5%;
   left: 2%;
   font-size: 12rem;
+
+  animation: tendaDx ease;
+  animation-timeline: view();
+  animation-range: entry 0% cover 50%;
 }
 .tenda-sx {
   position: absolute;
   top: 0;
   right: 0;
   translate: 50%;
+
+  animation: tendaDx ease;
+  animation-timeline: view();
+  animation-range: entry 0% cover 50%;
 }
 
 /*==========================================================================
@@ -163,10 +189,71 @@ body {
 }
 
 /*==========================================================================
+   ANIMAZIONI @KEYFRAME
+   ========================================================================== */
+
+@keyframes cardOneTwoTitolo {
+  /*----------CARD H1 H3 IMG---------------/*/
+  0% {
+    /*========================================*/
+    opacity: 0;
+    transform: translateX(-100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes cardOneTwoh3 {
+  0% {
+    opacity: 0;
+    transform: translateY(-100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes cardOneTwoImg {
+  0% {
+    opacity: 0;
+    transform: translateX(100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+} /*----------------------------------------------END--------------*/
+/*====================================*/
+/*----------------------------------------------TENDA DX SX---------*/
+@keyframes tendaDx {
+  0% {
+    opacity: 0;
+    transform: translateX(100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes tendaSx {
+  0% {
+    opacity: 0;
+    transform: translateX(100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/*------------------------------------------------END-----------------*/
+/*========================================*/
+
+/*==========================================================================
    MEDIA QUERIES (Smartphone e Tablet: eliminazione forzata degli elementi)
    ========================================================================== */
 @media (max-width: 1024px) {
-  .card-one, 
+  .card-one,
   .card-two {
     flex-direction: column;
     height: auto;
@@ -174,8 +261,8 @@ body {
     padding: 3rem 1rem;
     text-align: center;
   }
-  
-  .card-txt-one h1, 
+
+  .card-txt-one h1,
   .card-txt-two h1 {
     font-size: 3.5rem;
   }
@@ -193,8 +280,8 @@ body {
     margin: 0 auto;
   }
 
-  .info-bio h1, 
-  .info-bio h3, 
+  .info-bio h1,
+  .info-bio h3,
   .info-bio p {
     margin-left: 0;
     width: 100%;
@@ -205,7 +292,7 @@ body {
     padding: 4rem 1rem;
   }
 
-  .sinossi h2, 
+  .sinossi h2,
   .sinossi p {
     margin-left: 20px;
     margin-right: 20px;
@@ -223,7 +310,7 @@ body {
     width: 100%;
   }
 
-  .motivo h2, 
+  .motivo h2,
   .motivo p {
     margin-right: 20px;
     margin-left: 20px;
@@ -232,9 +319,9 @@ body {
   }
 
   /* Rimozione forzata e totale degli elementi decorativi su telefono */
-  .tenda-dx, 
-  .tenda-sx, 
-  .log-tele, 
+  .tenda-dx,
+  .tenda-sx,
+  .log-tele,
   .giradischi-photo {
     display: none !important;
   }
